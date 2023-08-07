@@ -1,3 +1,17 @@
+/*
+  ptoszek.pl
+  Powered by Jaczup
+
+  My version (ptoszek.pl): 
+  - https://github.com/jaczup/ptoszek.pl
+  Original version (theannoyingsite.com): 
+  - https://github.com/feross/TheAnnoyingSite.com/
+
+  Contact with me
+  - Discord: jaczup
+  - E-mail: contact@jaczup.me
+*/
+
 const SCREEN_WIDTH = window.screen.availWidth
 const SCREEN_HEIGHT = window.screen.availHeight
 const WIN_WIDTH = 480
