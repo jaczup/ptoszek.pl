@@ -1,3 +1,17 @@
+/*
+  ptoszek.pl
+  Powered by Jaczup
+
+  My version (ptoszek.pl): 
+  - https://github.com/jaczup/ptoszek.pl
+  Original version (theannoyingsite.com): 
+  - https://github.com/feross/TheAnnoyingSite.com/
+
+  Contact with me
+  - Discord: jaczup
+  - E-mail: contact@jaczup.me
+*/
+
 const SCREEN_WIDTH = window.screen.availWidth
 const SCREEN_HEIGHT = window.screen.availHeight
 const WIN_WIDTH = 480
@@ -47,7 +61,13 @@ const VIDEOS = [
   'jaczup.mp4',
   'duck.mp4',
   'rickroll.mp4',
-  'golomb.mp4'
+  'golomb.mp4',
+  'mushbox.mp4',
+  'clearmax.mp4',
+  'freestrona.mp4',
+  'ajhsdfhjasdbhfjasdfs.mp4',
+  'v09044g40000cgr968jc77u1t2krb89g.mov',
+  'intro.mp4'
 ]
 
 const FILE_DOWNLOADS = [
@@ -235,7 +255,7 @@ function initParentWindow () {
       removeHelloMessage()
       rainbowThemeColor()
       animateUrlWithEmojis()
-      speak('That was a mistake')
+      speak('To był błąd')
     }
   })
 }
