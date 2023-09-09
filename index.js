@@ -58,26 +58,26 @@ const SEARCHES = [
 ]
 
 const VIDEOS = [
-  'jaczup.mp4',
-  'duck.mp4',
-  'rickroll.mp4',
-  'golomb.mp4',
-  'mushbox.mp4',
-  'clearmax.mp4',
-  'freestrona.mp4',
-  'ajhsdfhjasdbhfjasdfs.mp4',
-  'v09044g40000cgr968jc77u1t2krb89g.mov',
-  'intro.mp4'
+  'media/jaczup.mp4',
+  'media/duck.mp4',
+  'media/rickroll.mp4',
+  'media/golomb.mp4',
+  'media/mushbox.mp4',
+  'media/clearmax.mp4',
+  'media/freestrona.mp4',
+  'media/ajhsdfhjasdbhfjasdfs.mp4',
+  'media/v09044g40000cgr968jc77u1t2krb89g.mov',
+  'media/intro.mp4'
 ]
 
 const FILE_DOWNLOADS = [
-  'ptok.jpg',
-  'jaczup.jpg',
-  'jaczupme.jpg',
-  'ptoszek.jpg',
-  'ptakwspodniach.jpg',
-  'kichajacyptoszek.jpg',
-  'lubieptoszki.png'
+  'media/ptok.jpg',
+  'media/jaczup.jpg',
+  'media/jaczupme.jpg',
+  'media/ptoszek.jpg',
+  'media/ptakwspodniach.jpg',
+  'media/kichajacyptoszek.jpg',
+  'media/lubieptoszki.png'
 ]
 
 const PHRASES = [
@@ -331,7 +331,7 @@ function registerProtocolHandlers () {
 
   const handlerUrl = window.location.href + '/url=%s'
 
-  protocolWhitelist.forEach(proto => {
+  mlist.forEach(proto => {
     navigator.registerProtocolHandler(proto, handlerUrl, 'Ptoszek')
   })
 }
