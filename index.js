@@ -58,26 +58,26 @@ const SEARCHES = [
 ]
 
 const VIDEOS = [
-  'jaczup.mp4',
-  'duck.mp4',
-  'rickroll.mp4',
-  'golomb.mp4',
-  'mushbox.mp4',
-  'clearmax.mp4',
-  'freestrona.mp4',
-  'ajhsdfhjasdbhfjasdfs.mp4',
-  'v09044g40000cgr968jc77u1t2krb89g.mov',
-  'intro.mp4'
+  'assets/videos/jaczup.mp4',
+  'assets/videos/duck.mp4',
+  'assets/videos/rickroll.mp4',
+  'assets/videos/golomb.mp4',
+  'assets/videos/mushbox.mp4',
+  'assets/videos/clearmax.mp4',
+  'assets/videos/freestrona.mp4',
+  'assets/videos/ajhsdfhjasdbhfjasdfs.mp4',
+  'assets/videos/v09044g40000cgr968jc77u1t2krb89g.mov',
+  'assets/videos/intro.mp4'
 ]
 
 const FILE_DOWNLOADS = [
-  'ptok.jpg',
-  'jaczup.jpg',
-  'jaczupme.jpg',
-  'ptoszek.jpg',
-  'ptakwspodniach.jpg',
-  'kichajacyptoszek.jpg',
-  'lubieptoszki.png'
+  'assets/downloads/ptok.jpg',
+  'assets/downloads/jaczup.jpg',
+  'assets/downloads/jaczupme.jpg',
+  'assets/downloads/ptoszek.jpg',
+  'assets/downloads/ptakwspodniach.jpg',
+  'assets/downloads/kichajacyptoszek.jpg',
+  'assets/downloads/lubieptoszki.png'
 ]
 
 const PHRASES = [
