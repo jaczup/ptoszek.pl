@@ -1,19 +1,21 @@
 /*
   ptoszek.pl
-  Powered by Jaczup
+  Powered by Jaczup, eleczka(intexpression)
 
   My version (ptoszek.pl): 
   - https://github.com/jaczup/ptoszek.pl
   Original version (theannoyingsite.com): 
   - https://github.com/feross/TheAnnoyingSite.com/
-
   VERIFY THAT YOU ARE DEFINITELY CONTACTING ME! MANY PEOPLE TRY TO IMPERSONATE ME.
+
+  
 
   My official social media I use:
     - YouTube: @jaczup
     - TikTok: @jaczup_app
     - Discord: jaczup
     - Twitter: @jaczup
+    - xhamster: @jaczup
     - E-mail: contact@jaczup.me
 */
 
@@ -96,6 +98,9 @@ const PHRASES = [
   'eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo'
 ]
 
+// @intexpression
+// musialem zalozyc chyba 4 polskie maile dla tego guwna Xddddddddd
+
 const LOGOUT_SITES = {
   Discord: ['POST', 'https://discord.com/api/v9/auth/logout', {provider: null, voip_provider: null}],
   Amazon: ['GET', 'https://www.amazon.com/gp/flex/sign-out.html?action=sign-out'],
@@ -107,6 +112,8 @@ const LOGOUT_SITES = {
   Google: ['GET', 'https://www.google.com/accounts/Logout'], // works!
   Hulu: ['GET', 'https://secure.hulu.com/logout'],
   NetFlix: ['GET', 'https://www.netflix.com/Logout'],
+  Vimeo: ['GET', 'https://vimeo.com/log_out'],// vimeo by @intexpression
+  Tumblr: ['GET', 'https://www.tumblr.com/logout'],// tumblr by @intexpression
   Skype: ['GET', 'https://secure.skype.com/account/logout'],
   SoundCloud: ['GET', 'https://soundcloud.com/logout'],
   'Steam Community': ['GET', 'https://steamcommunity.com/?action=doLogout'],
@@ -116,7 +123,12 @@ const LOGOUT_SITES = {
   Wordpress: ['GET', 'https://wordpress.com/wp-login.php?action=logout'],
   Yahoo: ['GET', 'https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=https://www.yahoo.com/'],
   YouTube: ['POST', 'https://www.youtube.com', { action_logout: '1' }],
-  JShop: ['GET', 'https://jshop.partners/panel/logout']
+  Allegro:  ['GET', 'https://allegro.pl/wyloguj?origin_url=/'],  // pizda allegro logout by @intexpression
+  OnetMail:  ['GET', '  https://authorisation.grupaonet.pl/logout.html?state=logout&client_id=poczta.onet.pl.front.onetapi.pl'],  // pizda onet logout by @intexpression
+  InteriaMail:  ['GET', 'https://poczta.interia.pl/logowanie/sso/logout'],  // pizda interia logout by @intexpression
+  OLX:  ['GET', '  https://www.olx.pl/account/logout'],  // logout z olixa (zeby nie bylo wyjeby na blika) by @intexpression
+  JShop: ['GET', 'https://jshop.partners/panel/logout'] // < co to kurwa jest ??? Xdddddddd
+  
 }
 
 /**
