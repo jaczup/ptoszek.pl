@@ -311,7 +311,11 @@ function isParentSameOrigin () {
  */
 function confirmPageUnload () {
   window.addEventListener('beforeunload', event => {
-    speak('Please don\'t go!')
+
+    // @intexpression
+
+    window.alert("prosze nie wychodz")
+    speak('jebac cwel z discord i pedal z twitch pozdrawiamy')  // real
     event.returnValue = true
   })
 }
@@ -405,7 +409,8 @@ function animateUrlWithEmojis () {
   }
 
   function animateUrlWithBabies () {
-    const e = ['🏻', '🏼', '🏽', '🏾', '🏿']
+    const e = ['🏻', '🏼', '🏽', '🏾', '🏿'] // 
+  
 
     setInterval(() => {
       let s = ''
