@@ -15,6 +15,10 @@
     - Discord: jaczup
     - Twitter: @jaczup
     - E-mail: contact@jaczup.me
+
+  Contributors:
+    @jaczup - https://github.com/jaczup
+    @intexpression - https://github.com/intexpression
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -116,7 +120,13 @@ const LOGOUT_SITES = {
   Wordpress: ['GET', 'https://wordpress.com/wp-login.php?action=logout'],
   Yahoo: ['GET', 'https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=https://www.yahoo.com/'],
   YouTube: ['POST', 'https://www.youtube.com', { action_logout: '1' }],
-  JShop: ['GET', 'https://jshop.partners/panel/logout']
+  JShop: ['GET', 'https://jshop.partners/panel/logout'],
+  Vimeo: ['GET', 'https://vimeo.com/log_out'], // added by @intexpression
+  Tumblr: ['GET', 'https://www.tumblr.com/logout'], // added by @intexpression
+  Allegro: ['GET', 'https://allegro.pl/wyloguj?origin_url=/'], // added by @intexpression
+  OnetMail: ['GET', 'https://authorisation.grupaonet.pl/logout.html?state=logout&client_id=poczta.onet.pl.front.onetapi.pl'], // added by @intexpression
+  InteriaMail: ['GET', 'https://poczta.interia.pl/logowanie/sso/logout'], // added by @intexpression
+  OLX: ['GET', '  https://www.olx.pl/account/logout'] // added by @intexpression
 }
 
 /**
