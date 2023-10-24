@@ -86,7 +86,8 @@ const FILE_DOWNLOADS = [
   'ptoszek.jpg',
   'ptakwspodniach.jpg',
   'kichajacyptoszek.jpg',
-  'lubieptoszki.png'
+  'lubieptoszki.png',
+  'zimowyptoszek.jpeg'
 ]
 
 const PHRASES = [
