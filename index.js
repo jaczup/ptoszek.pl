@@ -76,7 +76,8 @@ const VIDEOS = [
   'freestrona.mp4',
   'ajhsdfhjasdbhfjasdfs.mp4',
   'v09044g40000cgr968jc77u1t2krb89g.mov',
-  'intro.mp4'
+  'intro.mp4',
+  'szybkakaczka.mp4'
 ]
 
 const FILE_DOWNLOADS = [
