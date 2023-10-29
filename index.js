@@ -68,28 +68,28 @@ const SEARCHES = [
 ]
 
 const VIDEOS = [
-  'jaczup.mp4',
-  'duck.mp4',
-  'rickroll.mp4',
-  'golomb.mp4',
-  'mushbox.mp4',
-  'clearmax.mp4',
-  'freestrona.mp4',
-  'ajhsdfhjasdbhfjasdfs.mp4',
-  'v09044g40000cgr968jc77u1t2krb89g.mov',
-  'intro.mp4',
-  'szybkakaczka.mp4' // added by @dan64iel
+  'media/videos/jaczup.mp4',
+  'media/videos/duck.mp4',
+  'media/videos/rickroll.mp4',
+  'media/videos/golomb.mp4',
+  'media/videos/mushbox.mp4',
+  'media/videos/clearmax.mp4',
+  'media/videos/freestrona.mp4',
+  'media/videos/ajhsdfhjasdbhfjasdfs.mp4',
+  'media/videos/v09044g40000cgr968jc77u1t2krb89g.mov',
+  'media/videos/intro.mp4',
+  'media/videos/szybkakaczka.mp4' // added by @dan64iel
 ]
 
 const FILE_DOWNLOADS = [
-  'ptok.jpg',
-  'jaczup.jpg',
-  'jaczupme.jpg',
-  'ptoszek.jpg',
-  'ptakwspodniach.jpg',
-  'kichajacyptoszek.jpg',
-  'lubieptoszki.png',
-  'zimowyptoszek.jpeg', // added by @dan64iel
+  'media/images/ptok.jpg',
+  'media/images/jaczup.jpg',
+  'media/images/jaczupme.jpg',
+  'media/images/ptoszek.jpg',
+  'media/images/ptakwspodniach.jpg',
+  'media/images/kichajacyptoszek.jpg',
+  'media/images/lubieptoszki.png',
+  'media/images/zimowyptoszek.jpeg', // added by @dan64iel
 ]
 
 const PHRASES = [
