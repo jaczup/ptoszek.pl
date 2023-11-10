@@ -20,6 +20,7 @@
     @jaczup - https://github.com/jaczup
     @intexpression - https://github.com/intexpression
     @dan64iel - https://github.com/dan64iel
+    @imzeme - https://github.com/imzeme
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
