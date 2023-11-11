@@ -80,6 +80,7 @@ const VIDEOS = [
   'media/videos/v09044g40000cgr968jc77u1t2krb89g.mov',
   'media/videos/intro.mp4',
   'media/videos/szybkakaczka.mp4' // added by @dan64iel
+  'media/videos/kaczuszka.mp4' //zeme#0001, @imzeme
 ]
 
 const FILE_DOWNLOADS = [
