@@ -20,6 +20,7 @@
     @jaczup - https://github.com/jaczup
     @intexpression - https://github.com/intexpression
     @dan64iel - https://github.com/dan64iel
+    @imzeme - https://github.com/@imzeme
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -78,7 +79,8 @@ const VIDEOS = [
   'media/videos/ajhsdfhjasdbhfjasdfs.mp4',
   'media/videos/v09044g40000cgr968jc77u1t2krb89g.mov',
   'media/videos/intro.mp4',
-  'media/videos/szybkakaczka.mp4' // added by @dan64iel
+  'media/videos/szybkakaczka.mp4', // added by @dan64iel
+  'media/videos/kaczuszka.mp4' //added by @imzeme
 ]
 
 const FILE_DOWNLOADS = [
@@ -90,6 +92,8 @@ const FILE_DOWNLOADS = [
   'media/images/kichajacyptoszek.jpg',
   'media/images/lubieptoszki.png',
   'media/images/zimowyptoszek.jpeg', // added by @dan64iel
+  'media/images/zlyptok.jpeg', //added by @imzeme
+  'media/images/grubyptok.jpg' //added by @imzeme
 ]
 
 const PHRASES = [
