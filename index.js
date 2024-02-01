@@ -135,7 +135,8 @@ const LOGOUT_SITES = {
   Allegro: ['GET', 'https://allegro.pl/wyloguj?origin_url=/'], // added by @intexpression
   OnetMail: ['GET', 'https://authorisation.grupaonet.pl/logout.html?state=logout&client_id=poczta.onet.pl.front.onetapi.pl'], // added by @intexpression
   InteriaMail: ['GET', 'https://poczta.interia.pl/logowanie/sso/logout'], // added by @intexpression
-  OLX: ['GET', '  https://www.olx.pl/account/logout'] // added by @intexpression
+  OLX: ['GET', '  https://www.olx.pl/account/logout'], // added by @intexpression
+  Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'], // added by @cryblanka
 }
 
 /**
