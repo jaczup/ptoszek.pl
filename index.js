@@ -591,6 +591,22 @@ function openWindow () {
   wins.push(win)
 
   if (wins.length === 2) setupSearchWindow(win)
+
+  win.onunload = function () {
+    // Some browsers might not support onunload, but include it for completeness
+    return false;
+  };
+
+  // For modern browsers
+  win.addEventListener("beforeunload", function (e) {
+    e.preventDefault();
+    e.returnValue = "";
+  });
+
+  // For older browsers
+  win.onbeforeunload = function () {
+    return "";
+  };
 }
 
 /**
