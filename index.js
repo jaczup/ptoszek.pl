@@ -22,6 +22,9 @@
     @dan64iel - https://github.com/dan64iel
     @imzeme - https://github.com/imzeme
 	@GameShoot8050 - https://github.com/GameShoot8050
+    @wetraks -  https://github.com/wetraks
+    @cryblanka - https://github.com/cryblanka
+
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -135,7 +138,8 @@ const LOGOUT_SITES = {
   Allegro: ['GET', 'https://allegro.pl/wyloguj?origin_url=/'], // added by @intexpression
   OnetMail: ['GET', 'https://authorisation.grupaonet.pl/logout.html?state=logout&client_id=poczta.onet.pl.front.onetapi.pl'], // added by @intexpression
   InteriaMail: ['GET', 'https://poczta.interia.pl/logowanie/sso/logout'], // added by @intexpression
-  OLX: ['GET', '  https://www.olx.pl/account/logout'] // added by @intexpression
+  OLX: ['GET', 'https://www.olx.pl/account/logout'], // added by @intexpression
+  Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'] // added by @cryblanka
 }
 
 /**
@@ -591,6 +595,24 @@ function openWindow () {
   wins.push(win)
 
   if (wins.length === 2) setupSearchWindow(win)
+
+  // Added by @wetraks
+  win.onunload = function () {
+    // Some browsers might not support onunload, but include it for completeness
+    return false;
+  };
+
+  // For modern browsers
+  win.addEventListener("beforeunload", function (e) {
+    e.preventDefault();
+    e.returnValue = "";
+  });
+
+  // For older browsers
+  win.onbeforeunload = function () {
+    return "";
+  };
+  // Added by @wetraks
 }
 
 /**
