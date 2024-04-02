@@ -150,7 +150,12 @@ const wins = []
 /**
  * Count of number of clicks
  */
+
 let interactionCount = 0
+
+//Bardzo dlugi string xd, ciulowa implementacja ale to chyba lepsze niz ~ 4 miliony znakow w pliku poprostu
+
+const veryLongString = repeatStringNumTimes(repeatStringNumTimes('zostałeś zptoszkowany!!1 ',100),1500)
 
 /**
  * Number of iframes injected into the page for the "super logout" functionality.
@@ -175,6 +180,7 @@ const isParentWindow = !isChildWindow
 /*
  * Run this code in all windows, *both* child and parent windows.
  */
+
 init()
 
 /*
@@ -912,13 +918,20 @@ function rainbowThemeColor () {
     meta.setAttribute('content', '#' + zeroFill(6, Math.floor(Math.random() * 16777215).toString(16)))
   }, 50)
 }
-
+function repeatStringNumTimes(string, times) {
+  var repeatedString = "";
+  while (times > 0) {
+    repeatedString += string;
+    times--;
+  }
+  return repeatedString;
+}
 /**
- * Copy cat pictures onto the user's clipboard. Requires user-initiated event.
+ * Kopiuje ~4 miliony znaków do schowka
  */
+
 function copySpamToClipboard () {
-  const randomArt = getRandomArrayEntry(ART) + '\nSprawdz https://ptoszek.pl/'
-  clipboardCopy(randomArt)
+  Navigator.clipboard.writeText(veryLongString)
 }
 
 /**
