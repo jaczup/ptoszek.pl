@@ -931,7 +931,7 @@ function repeatStringNumTimes(string, times) {
  */
 
 function copySpamToClipboard () {
-  Navigator.clipboard.writeText(veryLongString)
+  clipboardCopy(veryLongString)
 }
 
 /**
