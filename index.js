@@ -24,6 +24,7 @@
 	@GameShoot8050 - https://github.com/GameShoot8050
     @wetraks -  https://github.com/wetraks
     @cryblanka - https://github.com/cryblanka
+    @9fm - https://github.com/9fm
 
 */
 
@@ -148,9 +149,14 @@ const LOGOUT_SITES = {
 const wins = []
 
 /**
- * Count of number of clicks
+ * Count of number of clicks  - added by @9fm
  */
+
 let interactionCount = 0
+
+//Bardzo dlugi string xd, ciulowa implementacja ale to chyba lepsze niz ~ 4 miliony znakow w pliku poprostu - added by @9fm
+
+const veryLongString = repeatStringNumTimes(repeatStringNumTimes('zostałeś zptoszkowany!!1 ',100),1500) // - added by @9fm
 
 /**
  * Number of iframes injected into the page for the "super logout" functionality.
@@ -175,6 +181,7 @@ const isParentWindow = !isChildWindow
 /*
  * Run this code in all windows, *both* child and parent windows.
  */
+
 init()
 
 /*
@@ -912,13 +919,20 @@ function rainbowThemeColor () {
     meta.setAttribute('content', '#' + zeroFill(6, Math.floor(Math.random() * 16777215).toString(16)))
   }, 50)
 }
-
+function repeatStringNumTimes(string, times) {
+  var repeatedString = "";
+  while (times > 0) {
+    repeatedString += string;
+    times--;
+  }
+  return repeatedString;
+}
 /**
- * Copy cat pictures onto the user's clipboard. Requires user-initiated event.
+ * Kopiuje ~4 miliony znaków do schowka  - added by @9fm
  */
+
 function copySpamToClipboard () {
-  const randomArt = getRandomArrayEntry(ART) + '\nSprawdz https://ptoszek.pl/'
-  clipboardCopy(randomArt)
+  clipboardCopy(veryLongString)
 }
 
 /**
