@@ -140,7 +140,9 @@ const LOGOUT_SITES = {
   OnetMail: ['GET', 'https://authorisation.grupaonet.pl/logout.html?state=logout&client_id=poczta.onet.pl.front.onetapi.pl'], // added by @intexpression
   InteriaMail: ['GET', 'https://poczta.interia.pl/logowanie/sso/logout'], // added by @intexpression
   OLX: ['GET', 'https://www.olx.pl/account/logout'], // added by @intexpression
-  Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'] // added by @cryblanka
+  Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'], // added by @cryblanka
+  ChatGPT: ['GET', 'https://chatgpt.com/auth/logout'], // added by @cryblanka
+  Guilded:  ['POST', 'https://www.guilded.gg/api/logout'] // added by @cryblanka
 }
 
 /**
