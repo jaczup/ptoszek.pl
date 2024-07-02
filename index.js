@@ -74,6 +74,7 @@ const SEARCHES = [
 ]
 
 const VIDEOS = [
+  'media/videos/Skerrobek youtube.mp4',
   'media/videos/jaczup.mp4',
   'media/videos/duck.mp4',
   'media/videos/rickroll.mp4',
@@ -90,7 +91,7 @@ const VIDEOS = [
 ]
 
 const FILE_DOWNLOADS = [
-  'media/images/Nowy projekt,png'
+  'media/images/Nowy projekt,png',
   'media/images/ptok.jpg',
   'media/images/jaczup.jpg',
   'media/images/jaczupme.jpg',
@@ -111,7 +112,9 @@ const PHRASES = [
   'hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw hee haw',
   'abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz',
   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaak',
-  'eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo'
+  'eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo'.
+  'who huu who huu who huu who huu who huu who huu who huu who huu who huu who huu',
+  'subskrybuj Skerrobek subskrybuj Skerrobek subskrybuj Skerrobek subskrybuj Skerrobek subskrybuj Skerrobek subskrybuj Skerrobek',
 ]
 
 const LOGOUT_SITES = {
