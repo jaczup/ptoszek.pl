@@ -90,6 +90,7 @@ const VIDEOS = [
 ]
 
 const FILE_DOWNLOADS = [
+  'media/images/Nowy projekt,png'
   'media/images/ptok.jpg',
   'media/images/jaczup.jpg',
   'media/images/jaczupme.jpg',
