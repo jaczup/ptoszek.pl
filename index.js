@@ -7,14 +7,7 @@
   Original version (theannoyingsite.com): 
   - https://github.com/feross/TheAnnoyingSite.com/
 
-  VERIFY THAT YOU ARE DEFINITELY CONTACTING ME! MANY PEOPLE TRY TO IMPERSONATE ME.
-
-  My official social media I use:
-    - YouTube: @jaczup
-    - TikTok: @jaczup_app
-    - Discord: jaczup
-    - Twitter: @jaczup
-    - E-mail: contact@jaczup.me
+  Contact with me: https://jaczup.pl
 
   Contributors:
     @jaczup - https://github.com/jaczup
