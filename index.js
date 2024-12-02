@@ -1126,7 +1126,9 @@ function getRandomArrayEntry (arr) {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-// TODO: document this
+/**
+ * Automates a series of Google searches in a browser window, moving the window randomly between searches.
+ */
 function setupSearchWindow (win) {
   if (!win) return
   win.window.location = 'https://www.google.com/search?q=' + encodeURIComponent(SEARCHES[0])
