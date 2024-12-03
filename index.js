@@ -92,7 +92,8 @@ const FILE_DOWNLOADS = [
   'media/images/lubieptoszki.png',
   'media/images/zimowyptoszek.jpeg', // added by @dan64iel
   'media/images/zlyptok.jpeg', //added by @imzeme
-  'media/images/grubyptok.jpg' //added by @imzeme
+  'media/images/grubyptok.jpg', //added by @imzeme
+  'media/images/ptokzjajami.jpeg'
 ]
 
 const PHRASES = [
@@ -135,7 +136,17 @@ const LOGOUT_SITES = {
   OLX: ['GET', 'https://www.olx.pl/account/logout'], // added by @intexpression
   Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'], // added by @cryblanka
   ChatGPT: ['GET', 'https://chatgpt.com/auth/logout'], // added by @cryblanka
-  Guilded:  ['POST', 'https://www.guilded.gg/api/logout'] // added by @cryblanka
+  Guilded:  ['POST', 'https://www.guilded.gg/api/logout'], // added by @cryblanka
+  LinkedIn: ['GET', 'https://www.linkedin.com/m/logout/'],
+  Pinterest: ['GET', 'https://www.pinterest.com/logout/'],
+  Reddit: ['GET', 'https://www.reddit.com/logout'],
+  Spotify: ['GET', 'https://www.spotify.com/logout/'],
+  Microsoft: ['GET', 'https://login.microsoftonline.com/common/oauth2/logout'],
+  Instagram: ['GET', 'https://www.instagram.com/accounts/logout/'],
+  Trello: ['GET', 'https://trello.com/logout'],
+  Baidu: ['GET', 'https://passport.baidu.com/?logout'],
+  VK: ['GET', 'https://vk.com/exit'],
+  StackOverflow: ['GET', 'https://stackoverflow.com/users/logout']
 }
 
 /**
