@@ -1,5 +1,7 @@
 # ptoszek.pl - Sptoszkuj kogoś!
 
+![Ptoszek.pl](./media/images/intro.gif)
+
 ### Czym jest ptoszek.pl?
 Ptoszek.pl to projekt edukacyjny mający na celu uświadamianie użytkowników internetu o zagrożeniach związanych z otwieraniem nieznanych linków. Strona demonstruje potencjalne możliwości stron internetowych uruchamianych w przeglądarce, takie jak nietypowe interakcje czy nieoczekiwane działania.
 
