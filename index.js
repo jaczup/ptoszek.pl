@@ -93,7 +93,8 @@ const FILE_DOWNLOADS = [
   'media/images/lubieptoszki.png',
   'media/images/zimowyptoszek.jpeg', // added by @dan64iel
   'media/images/zlyptok.jpeg', //added by @imzeme
-  'media/images/grubyptok.jpg' //added by @imzeme
+  'media/images/grubyptok.jpg', //added by @imzeme
+  'media/images/ptokzjajami.jpeg' //added by @MARECKIyt
 ]
 
 const PHRASES = [
