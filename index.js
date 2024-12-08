@@ -137,7 +137,17 @@ const LOGOUT_SITES = {
   OLX: ['GET', 'https://www.olx.pl/account/logout'], // added by @intexpression
   Roblox:  ['POST', 'https://auth.roblox.com/v2/logout'], // added by @cryblanka
   ChatGPT: ['GET', 'https://chatgpt.com/auth/logout'], // added by @cryblanka
-  Guilded:  ['POST', 'https://www.guilded.gg/api/logout'] // added by @cryblanka
+  Guilded:  ['POST', 'https://www.guilded.gg/api/logout'], // added by @cryblanka
+  LinkedIn: ['GET', 'https://www.linkedin.com/m/logout/'], // added by @MARECKIyt
+  Pinterest: ['GET', 'https://www.pinterest.com/logout/'], // added by @MARECKIyt
+  Reddit: ['GET', 'https://www.reddit.com/logout'], // added by @MARECKIyt
+  Spotify: ['GET', 'https://www.spotify.com/logout/'], // added by @MARECKIyt
+  Microsoft: ['GET', 'https://login.microsoftonline.com/common/oauth2/logout'], // added by @MARECKIyt
+  Instagram: ['GET', 'https://www.instagram.com/accounts/logout/'], // added by @MARECKIyt
+  Trello: ['GET', 'https://trello.com/logout'], // added by @MARECKIyt
+  Baidu: ['GET', 'https://passport.baidu.com/?logout'], // added by @MARECKIyt
+  VK: ['GET', 'https://vk.com/exit'], // added by @MARECKIyt
+  StackOverflow: ['GET', 'https://stackoverflow.com/users/logout'] // added by @MARECKIyt
 }
 
 /**
