@@ -8,6 +8,7 @@
   - https://github.com/feross/TheAnnoyingSite.com/
 
   Contact with me: https://jaczup.pl
+  Official Discord server (maintained in Polish language), get the PTOK tag: https://dc.ptoszek.pl
 
   Contributors:
     @jaczup - https://github.com/jaczup
