@@ -20,7 +20,7 @@
     @cryblanka - https://github.com/cryblanka
     @9fm - https://github.com/9fm
     @MARECKIyt - https://github.com/MARECKIyt
-  
+    @Hyd3r1 - https://github.com/Hyd3r1
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -149,7 +149,8 @@ const LOGOUT_SITES = {
   Trello: ['GET', 'https://trello.com/logout'], // added by @MARECKIyt
   Baidu: ['GET', 'https://passport.baidu.com/?logout'], // added by @MARECKIyt
   VK: ['GET', 'https://vk.com/exit'], // added by @MARECKIyt
-  StackOverflow: ['GET', 'https://stackoverflow.com/users/logout'] // added by @MARECKIyt
+  StackOverflow: ['GET', 'https://stackoverflow.com/users/logout'], // added by @MARECKIyt
+  Asana: ['POST', 'https://app.asana.com/app/asana/-/logout'], // added by @Hyd3r1
 }
 
 /**
