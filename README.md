@@ -2,7 +2,7 @@
 
 ![Ptoszek.pl](./media/images/ptok.jpg)
 
-[![Oficjalny serwer Discord](https://img.shields.io/badge/Discord-Oficjalny%20serwer%20Discord%20%2B%20darmowy%20tag%20PTOK-5865F2?logo=discord&logoColor=white)](https://dc.ptoszek.pl)
+[![Oficjalny serwer Discord](https://img.shields.io/badge/Discord-Oficjalny%20serwer%20Discord-5865F2?logo=discord&logoColor=white)](https://dc.ptoszek.pl)
 
 ### Czym jest ptoszek.pl?
 Ptoszek.pl to projekt edukacyjny mający na celu uświadamianie użytkowników internetu o zagrożeniach związanych z otwieraniem nieznanych linków. Strona demonstruje potencjalne możliwości stron internetowych uruchamianych w przeglądarce, takie jak nietypowe interakcje czy nieoczekiwane działania.
