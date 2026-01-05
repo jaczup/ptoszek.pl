@@ -151,7 +151,58 @@ const LOGOUT_SITES = {
   VK: ['GET', 'https://vk.com/exit'], // added by @MARECKIyt
   StackOverflow: ['GET', 'https://stackoverflow.com/users/logout'], // added by @MARECKIyt
   Asana: ['POST', 'https://app.asana.com/app/asana/-/logout'], // added by @Hyd3r1
-}
+  Facebook: ['GET', 'https://www.facebook.com/logout.php'], // added by @ltj_
+  Twitter: ['POST', 'https://twitter.com/logout'], // added by @ltj_
+  Twitch: ['GET', 'https://www.twitch.org/logout'], // added by @ltj_
+  TikTok: ['GET', 'https://www.tiktok.com/logout'], // added by @ltj_
+  Bitbucket: ['GET', 'https://bitbucket.org/account/signout/'], // added by @ltj_
+  GitLab: ['GET', 'https://gitlab.com/users/sign_out'], // added by @ltj_
+  Slack: ['GET', 'https://slack.com/logout'], // added by @ltj_
+  Discord_Web: ['GET', 'https://discord.com/logout'], // added by @ltj_
+  Quora: ['POST', 'https://www.quora.com/logout'], // added by @ltj_
+  Coursera: ['GET', 'https://www.coursera.org/logout'], // added by @ltj_
+  Udemy: ['GET', 'https://www.udemy.com/user/logout/'], // added by @ltj_
+  EpicGames: ['GET', 'https://www.epicgames.com/id/logout'], // added by @ltj_
+  GOG: ['GET', 'https://www.gog.com/account/logout'], // added by @ltj_
+  Origin: ['GET', 'https://www.origin.com/logout'], // added by @ltj_
+  BattleNet: ['GET', 'https://battle.net/login/logout'], // added by @ltj_
+  Nintendo: ['GET', 'https://accounts.nintendo.com/logout'], // added by @ltj_
+  PocztaWP: ['GET', 'https://profil.wp.pl/wyloguj.html'], // added by @ltj_
+  Ceneo: ['GET', 'https://www.ceneo.pl/konto/wyloguj'], // added by @ltj_
+  Wykoppl: ['GET', 'https://wykop.pl/wyloguj'], // added by @ltj_
+  AppleID: ['GET', 'https://appleid.apple.com/logout'], // added by @ltj_
+  Adobe: ['GET', 'https://www.adobe.com/account/sign-out.html'], // added by @ltj_
+  Canva: ['GET', 'https://www.canva.com/logout'], // added by @ltj_
+  Figma: ['POST', 'https://www.figma.com/api/logout'], // added by @ltj_
+  Medium: ['GET', 'https://medium.com/me/signout'], // added by @ltj_
+  Uber: ['GET', 'https://auth.uber.com/logout'], // added by @ltj_
+  Airbnb: ['GET', 'https://www.airbnb.com/logout'], // added by @ltj_
+  Booking: ['GET', 'https://secure.booking.com/logout.html'], // added by @ltj_
+  Expedia: ['GET', 'https://www.expedia.com/logout'], // added by @ltj_
+  Patreon: ['GET', 'https://www.patreon.com/logout'], // added by @ltj_
+  Behance: ['GET', 'https://www.behance.net/logout'], // added by @ltj_
+  Dribbble: ['GET', 'https://dribbble.com/session'], // added by @ltj_
+  Heroku: ['GET', 'https://id.heroku.com/logout'], // added by @ltj_
+  DigitalOcean: ['GET', 'https://cloud.digitalocean.com/logout'], // added by @ltj_
+  Cloudflare: ['GET', 'https://dash.cloudflare.com/logout'], // added by @ltj_
+  DisneyPlus: ['GET', 'https://www.disneyplus.com/logout'], // added by @ltj_
+  HBO_Max: ['GET', 'https://www.hbomax.com/logout'], // added by @ltj_
+  Rakuten: ['GET', 'https://www.rakuten.com/logout.html'], // added by @ltj_
+  Etsy: ['GET', 'https://www.etsy.com/logout.php'], // added by @ltj_
+  Vinted: ['GET', 'https://www.vinted.pl/logout'], // added by @ltj_
+  Zalando: ['GET', 'https://www.zalando.pl/logout/'], // added by @ltj_
+  AliExpress: ['GET', 'https://login.aliexpress.com/page/logout.htm'], // added by @ltj_
+  Badoo: ['GET', 'https://badoo.com/logout/'], // added by @ltj_
+  Tinder: ['GET', 'https://tinder.com/logout'], // added by @ltj_
+  OkCupid: ['GET', 'https://www.okcupid.com/logout'], // added by @ltj_
+  Lastfm: ['GET', 'https://www.last.fm/logout'], // added by @ltj_
+  Deezer: ['GET', 'https://www.deezer.com/logout'], // added by @ltj_
+  Evernote: ['GET', 'https://www.evernote.com/Logout.action'], // added by @ltj_
+  Notion: ['GET', 'https://www.notion.so/logout'], // added by @ltj_
+  Zoom: ['GET', 'https://zoom.us/logout'], // added by @ltj_
+  TeamViewer: ['GET', 'https://login.teamviewer.com/LogOn/LogOff'], // added by @ltj_
+  Webex: ['GET', 'https://www.webex.com/logout.html'], // added by @ltj_
+}  
 
 /**
  * Array to store the child windows spawned by this window.
