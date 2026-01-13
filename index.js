@@ -21,6 +21,7 @@
     @9fm - https://github.com/9fm
     @MARECKIyt - https://github.com/MARECKIyt
     @Hyd3r1 - https://github.com/Hyd3r1
+    @MariaWasNotAvailable - https://github.com/MariaWasNotAvailable
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -81,7 +82,8 @@ const VIDEOS = [
   'media/videos/intro.mp4',
   'media/videos/szybkakaczka.mp4', // added by @dan64iel
   'media/videos/kaczuszka.mp4', //added by @imzeme
-  'media/videos/gratulacje.mp4' //added by @GameShoot8050
+  'media/videos/gratulacje.mp4', //added by @GameShoot8050
+  'media/videos/puddi.mp4' //added by @MariaWasNotAvailable
 ]
 
 const FILE_DOWNLOADS = [
