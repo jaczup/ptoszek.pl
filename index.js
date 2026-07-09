@@ -21,6 +21,7 @@
     @9fm - https://github.com/9fm
     @MARECKIyt - https://github.com/MARECKIyt
     @Hyd3r1 - https://github.com/Hyd3r1
+    @Kocmouch - https://github.com/Kocmouch
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -110,6 +111,14 @@ const PHRASES = [
   'eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo eyo'
 ]
 
+const TITLE_MESSAGES = [
+  'PTOSZEK',
+  'kliknij mnie znowu',
+  'ptak patrol',
+  'nie uciekaj',
+  'zptoszkowany'
+]
+
 const LOGOUT_SITES = {
   Discord: ['POST', 'https://discord.com/api/v9/auth/logout', {provider: null, voip_provider: null}],
   Amazon: ['GET', 'https://www.amazon.com/gp/flex/sign-out.html?action=sign-out'],
@@ -163,6 +172,16 @@ const wins = []
  */
 
 let interactionCount = 0
+
+/*
+ * Even more chaos!
+ */
+
+let hasStartedChaos = false
+let hasStartedChildChaos = false
+let hasWakeLockLoopStarted = false
+let wakeLockSentinel = null
+let overlayMessageCount = 0
 
 //Bardzo dlugi string xd, ciulowa implementacja ale to chyba lepsze niz ~ 4 miliony znakow w pliku poprostu - added by @9fm
 
@@ -223,6 +242,7 @@ function init () {
     startVibrateInterval()
     enablePictureInPicture()
     triggerFileDownload()
+    startChaosEffects()
 
     focusWindows()
     copySpamToClipboard()
@@ -252,6 +272,8 @@ function init () {
       requestUsbAccess()
       requestSerialAccess()
       requestHidAccess()
+      requestKeyboardLock()
+      requestNotificationPermission()
       requestCameraAndMic()
       requestFullscreen()
     }
@@ -271,6 +293,7 @@ function initChildWindow () {
   speak()
   rainbowThemeColor()
   animateUrlWithEmojis()
+  startWindowEffects()
 
   interceptUserInput(event => {
     if (interactionCount === 1) {
@@ -300,9 +323,32 @@ function initParentWindow () {
       removeHelloMessage()
       rainbowThemeColor()
       animateUrlWithEmojis()
+      startWindowEffects()
       speak('To był błąd')
     }
   })
+}
+
+function startChaosEffects () {
+  if (hasStartedChaos) return
+  hasStartedChaos = true
+
+  startTitleFlicker()
+  startFakeCursorTrail()
+  startSelectionChaos()
+  startScrollJitter()
+  startOverlayMessages()
+  startPageZoomJitter()
+  requestWakeLockLoop()
+}
+
+function startWindowEffects () {
+  if (hasStartedChildChaos) return
+  hasStartedChildChaos = true
+
+  startTitleFlicker()
+  startFakeCursorTrail()
+  startOverlayMessages()
 }
 
 /**
@@ -500,6 +546,189 @@ function animateUrlWithEmojis () {
       window.location.hash = s
     }, 100)
   }
+}
+
+/**
+ * Flicker the page title between annoying messages.
+ */
+function startTitleFlicker () {
+  if (document.documentElement.dataset.ptoszekTitleFlicker === '1') return
+  document.documentElement.dataset.ptoszekTitleFlicker = '1'
+
+  setInterval(() => {
+    document.title = getRandomArrayEntry(TITLE_MESSAGES)
+  }, 350)
+}
+
+/**
+ * Draw fake cursors that follow the real cursor with a delay.
+ */
+function startFakeCursorTrail () {
+  if (document.documentElement.dataset.ptoszekFakeCursorTrail === '1') return
+  document.documentElement.dataset.ptoszekFakeCursorTrail = '1'
+
+  const cursors = ['🖱️', '🐦', '📎', '❌'].map(symbol => {
+    const el = document.createElement('div')
+    el.textContent = symbol
+    el.style = 'position: fixed; left: 0; top: 0; z-index: 2147483647; pointer-events: none; font-size: 28px; transform: translate(-9999px, -9999px);'
+    document.body.appendChild(el)
+    return { el, x: -9999, y: -9999 }
+  })
+
+  let targetX = -9999
+  let targetY = -9999
+
+  document.body.addEventListener('mousemove', event => {
+    targetX = event.clientX
+    targetY = event.clientY
+  })
+
+  setInterval(() => {
+    cursors.forEach((cursor, index) => {
+      cursor.x += (targetX - cursor.x) * (0.18 - index * 0.02)
+      cursor.y += (targetY - cursor.y) * (0.18 - index * 0.02)
+      cursor.el.style.transform = `translate(${cursor.x + index * 18}px, ${cursor.y + index * 12}px)`
+    })
+  }, 16)
+}
+
+/**
+ * Periodically hijack the current text selection.
+ */
+function startSelectionChaos () {
+  if (document.documentElement.dataset.ptoszekSelectionChaos === '1') return
+  document.documentElement.dataset.ptoszekSelectionChaos = '1'
+
+  const selectionTrap = document.createElement('div')
+  selectionTrap.textContent = PHRASES.join(' ')
+  selectionTrap.style = HIDDEN_STYLE
+  document.body.appendChild(selectionTrap)
+
+  setInterval(() => {
+    const selection = window.getSelection()
+    if (!selection) return
+
+    const range = document.createRange()
+    range.selectNodeContents(selectionTrap)
+    selection.removeAllRanges()
+    selection.addRange(range)
+  }, 1800)
+}
+
+/**
+ * Make wheel and touch scroll attempts shake the viewport.
+ */
+function startScrollJitter () {
+  if (document.documentElement.dataset.ptoszekScrollJitter === '1') return
+  document.documentElement.dataset.ptoszekScrollJitter = '1'
+
+  let jitterTimeout = null
+
+  const jitter = () => {
+    document.body.style.transform = `translate(${Math.floor(Math.random() * 36) - 18}px, ${Math.floor(Math.random() * 36) - 18}px) rotate(${Math.random() * 4 - 2}deg)`
+    clearTimeout(jitterTimeout)
+    jitterTimeout = setTimeout(() => {
+      document.body.style.transform = ''
+    }, 120)
+  }
+
+  window.addEventListener('wheel', jitter, { passive: true })
+  document.body.addEventListener('touchmove', jitter, { passive: true })
+}
+
+/**
+ * Keep trying to request a screen wake lock when the tab is visible.
+ */
+function requestWakeLockLoop () {
+  if (hasWakeLockLoopStarted) return
+  hasWakeLockLoopStarted = true
+
+  if (!navigator.wakeLock || typeof navigator.wakeLock.request !== 'function') return
+
+  const requestWakeLock = () => {
+    if (document.visibilityState !== 'visible') return
+
+    navigator.wakeLock.request('screen').then(lock => {
+      wakeLockSentinel = lock
+      wakeLockSentinel.addEventListener('release', () => {
+        wakeLockSentinel = null
+      })
+    }, () => {})
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (!wakeLockSentinel) requestWakeLock()
+  })
+
+  requestWakeLock()
+}
+
+/**
+ * Spawn loud floating messages around the screen.
+ */
+function startOverlayMessages () {
+  if (document.documentElement.dataset.ptoszekOverlayMessages === '1') return
+  document.documentElement.dataset.ptoszekOverlayMessages = '1'
+
+  setInterval(() => {
+    const div = document.createElement('div')
+    const left = Math.floor(Math.random() * Math.max(window.innerWidth - 220, 1))
+    const top = Math.floor(Math.random() * Math.max(window.innerHeight - 80, 1))
+
+    overlayMessageCount += 1
+    div.textContent = `${getRandomArrayEntry(PHRASES)} #${overlayMessageCount}`
+    div.style = `position: fixed; left: ${left}px; top: ${top}px; z-index: 2147483646; color: red; font-weight: bold; font-size: ${18 + Math.floor(Math.random() * 18)}px; text-shadow: 2px 2px #FFF, 4px 4px 10px #000; pointer-events: none; transform: rotate(${Math.random() * 30 - 15}deg);`
+    document.body.appendChild(div)
+
+    setTimeout(() => {
+      div.remove()
+    }, 4000)
+  }, 900)
+}
+
+/**
+ * Briefly zoom and skew the page every few seconds.
+ */
+function startPageZoomJitter () {
+  if (document.documentElement.dataset.ptoszekPageZoomJitter === '1') return
+  document.documentElement.dataset.ptoszekPageZoomJitter = '1'
+
+  setInterval(() => {
+    document.body.style.transform = `scale(${1 + Math.random() * 0.18}) skew(${Math.random() * 8 - 4}deg, ${Math.random() * 6 - 3}deg)`
+    setTimeout(() => {
+      document.body.style.transform = ''
+    }, 260)
+  }, 3200)
+}
+
+/**
+ * Request permission to show notifications.
+ */
+function requestNotificationPermission () {
+  if (!window.Notification || Notification.permission !== 'default') return
+
+  Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      new Notification('Ptoszek', {
+        body: getRandomArrayEntry(PHRASES)
+      })
+    }
+  }, () => {})
+}
+
+/**
+ * Attempt to lock common escape keys.
+ */
+function requestKeyboardLock () {
+  if (!navigator.keyboard || typeof navigator.keyboard.lock !== 'function') return
+
+  navigator.keyboard.lock([
+    'Escape',
+    'KeyW',
+    'KeyN',
+    'F4',
+    'Tab'
+  ]).catch(() => {})
 }
 
 /**
