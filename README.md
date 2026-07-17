@@ -1,47 +1,17 @@
-# ptoszek.pl - Sptoszkuj kogoś!
-
-![Ptoszek.pl](./media/images/ptok.jpg)
-
-[![Oficjalny serwer Discord](https://img.shields.io/badge/Discord-Oficjalny%20serwer%20Discord-5865F2?logo=discord&logoColor=white)](https://dc.ptoszek.pl)
-
-### Czym jest ptoszek.pl?
-Ptoszek.pl to projekt edukacyjny mający na celu uświadamianie użytkowników internetu o zagrożeniach związanych z otwieraniem nieznanych linków. Strona demonstruje potencjalne możliwości stron internetowych uruchamianych w przeglądarce, takie jak nietypowe interakcje czy nieoczekiwane działania.
+# acidbird - Moja wersja ptoszka...
 
 **Uwaga:**  
 Strona jest w pełni bezpieczna. Nie powoduje żadnych szkód ani zagrożeń dla Twojego urządzenia. Wszystkie funkcje mają charakter edukacyjny, a pobierane pliki (zdjęcia, filmy) są wolne od wirusów.
 
 ---
 
-## Jak możesz pomóc w rozwoju projektu?
-
-Ptoszek.pl to projekt open-source i każdy może wnieść swój wkład!  
-
-- Dodaj nowe funkcje, np. kolejne nietypowe interakcje w przeglądarce.  
-- Rozszerz stronę o nowe mechanizmy (np. obsługę kolejnych nietypowych zachowań).  
-- Zgłoś swoje pomysły w postaci **Pull Requesta** – chętnie je dodam!
-
----
-
-## Jak zacząć?
-
-1. Sklonuj repozytorium:  
-   ```bash
-   git clone https://github.com/jaczup/ptoszek.pl.git
-   cd ptoszek
-   ```
-2. Otwórz projekt w swoim ulubionym edytorze kodu.  
-3. Wprowadź zmiany i przetestuj je lokalnie.  
-4. Zgłoś Pull Requesta!
-
----
-
 ## Inspiracja
 
-Projekt został stworzony przez [jaczup.pl](https://jaczup.pl) na bazie popularnej strony [theannoyingsite.com](https://theannoyingsite.com), znanej za granicą.
+Projekt został stworzony przez [s2016](https://github.com/S2016-S2016) na bazie [ptoszek.pl](https://ptoszek.pl) 
 
 ---
 
-## Historia
+## Historia (Oryginalnej wersji od jaczupa)
 
 Pewnego dnia, chcąc strollować moich znajomych, stworzyłem stronę sapcord.pl/ptoszek. Była to przerobiona kopia theannoyingsite.com, gdzie zamiast kotów umieściłem zdjęcia ptaków i dostosowałem kod strony, dodając elementy związane ze mną. Strona zaczęła żyć własnym życiem, gdy znajomi zaczęli rozsyłać do niej linki, co stało się pierwszą formą jej promocji. Wkrótce powstał pierwszy TikTok o Ptoszku, na którym strona została otwarta podczas lekcji informatyki (przez Hedwisa - dawny znajomy [kto wie, ten wie :)]). Był to rok 2021 / 2022. Popularność zaczęła rosnąć.
 
