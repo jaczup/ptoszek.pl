@@ -66,6 +66,82 @@
       animation-duration: 15s;
       animation-play-state: running;
     }
+    .spy-console {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 600px;
+      max-height: 85%;
+      background: rgba(5, 15, 5, 0.98);
+      border: 3px solid #34eb7d;
+      box-shadow: 0 0 30px rgba(52, 235, 125, 0.5);
+      color: #34eb7d;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      z-index: 999999;
+      display: none;
+      border-radius: 10px;
+      text-align: left;
+    }
+    .spy-console h2 {
+      margin-top: 0;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 2px dashed #34eb7d;
+      padding-bottom: 10px;
+      font-size: 22px;
+      text-shadow: 0 0 10px #34eb7d;
+    }
+    .spy-console-line {
+      margin: 10px 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.4;
+    }
+    .spy-console-accent {
+      color: #ff3333;
+      font-weight: bold;
+      text-shadow: 0 0 5px #ff3333;
+    }
+    .spy-console-highlight {
+      color: #ffffff;
+      font-weight: bold;
+      text-shadow: 0 0 5px #ffffff;
+    }
+    .spy-console-warning {
+      margin-top: 20px;
+      border: 2px solid #ff3333;
+      background: rgba(50, 0, 0, 0.5);
+      padding: 15px;
+      color: #ff9999;
+      font-size: 14px;
+      border-radius: 5px;
+      line-height: 1.5;
+    }
+    .spy-console-close {
+      display: block;
+      margin: 20px auto 0 auto;
+      background: #34eb7d;
+      color: #000;
+      border: none;
+      padding: 10px 24px;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(52, 235, 125, 0.5);
+      transition: all 0.2s ease-in-out;
+    }
+    .spy-console-close:hover {
+      background: #20af57;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #34eb7d;
+    }
   </style>
   <link rel="icon" type="image/x-icon" href="media/images/ptok.jpg">
 
@@ -91,6 +167,8 @@
   </div>
   <div class='logout-messages'></div>
 </template>
+
+<div class="spy-console" id="spyConsole"></div>
 
 <script src='index.js'></script>   
 

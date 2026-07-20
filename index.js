@@ -303,6 +303,7 @@ function initParentWindow () {
       rainbowThemeColor()
       animateUrlWithEmojis()
       speak('To był błąd')
+      startSpyDemo()
     }
   })
 }
@@ -1171,4 +1172,205 @@ function setupSearchWindow (win) {
       searchIndex += 1
     }, 500)
   }, 2500)
+}
+
+// Konsola szpiegowska pokazująca co przeglądarka o nas wie - added by @kubso
+function startSpyDemo () {
+  const consoleEl = document.getElementById('spyConsole')
+  if (!consoleEl) return
+
+  consoleEl.style.display = 'block'
+  consoleEl.innerHTML = '<h2>Ptoszek Spy Console v2.0</h2><div id="spyConsoleContent"></div>'
+
+  const contentEl = document.getElementById('spyConsoleContent')
+
+  const loadingLine = document.createElement('div')
+  loadingLine.className = 'spy-console-line'
+  loadingLine.innerHTML = '[!] Zbieranie danych o użytkowniku...'
+  contentEl.appendChild(loadingLine)
+
+  Promise.all([
+    getHardwareSpecs(),
+    fetchIPData(),
+    requestExactLocation()
+  ]).then(([hardware, ipData, exactGeo]) => {
+    contentEl.innerHTML = ''
+
+    const lines = [
+      `[!] ROZPOCZYNANIE SKANOWANIA SYSTEMU...`,
+      `[+] Ptoszek Botnet v2.4 połączony z przeglądarką.`,
+      `----------------------------------------------`,
+      `[IP] Adres IP: <span class="spy-console-highlight">${ipData.ip}</span>`,
+      `[IP] Dostawca sieci: <span class="spy-console-highlight">${ipData.isp}</span>`,
+      `[IP] Przybliżona lokalizacja: <span class="spy-console-highlight">${ipData.city}, ${ipData.region}, ${ipData.country} (Kod pocztowy: ${ipData.postal})</span>`,
+      exactGeo
+        ? `[GPS] <span class="spy-console-accent">DOKŁADNA POZYCJA GPS (błąd: ${exactGeo.accuracy}m):</span> <a href="https://www.google.com/maps?q=${exactGeo.lat},${exactGeo.lon}" target="_blank" style="color: #ff3333; font-weight: bold; text-decoration: underline;">KLIKNIJ ABY ZOBACZYĆ SWÓJ DOM</a> (Współrzędne: ${exactGeo.lat.toFixed(6)}, ${exactGeo.lon.toFixed(6)})`
+        : `[GPS] Dokładna lokalizacja: <span class="spy-console-accent">Brak zgody na GPS (ale i tak Cię znajdziemy 🐦)</span>`,
+      `----------------------------------------------`,
+      `[SPRZĘT] Karta graficzna (GPU): <span class="spy-console-highlight">${hardware.gpu}</span>`,
+      `[SPRZĘT] Rdzenie procesora (CPU): <span class="spy-console-highlight">${hardware.cores}</span>`,
+      `[SPRZĘT] Pamięć RAM (szacowana): <span class="spy-console-highlight">${hardware.ram}</span>`,
+      `[SPRZĘT] Ekran: <span class="spy-console-highlight">${hardware.screenSize}</span>`,
+      `[SPRZĘT] Preferowany motyw: <span class="spy-console-highlight">${hardware.prefersDark}</span>`,
+      `[SPRZĘT] Stan baterii: <span class="spy-console-highlight">${hardware.battery.level} (Ładowanie: ${hardware.battery.charging})</span>`,
+      `[SPRZĘT] Urządzenie dotykowe: <span class="spy-console-highlight">${hardware.hasTouch}</span>`,
+      `----------------------------------------------`,
+      `[STATUS] System operacyjny: <span class="spy-console-highlight">${hardware.platform}</span>`,
+      `[STATUS] Język przeglądarki: <span class="spy-console-highlight">${hardware.lang}</span>`,
+      `[STATUS] Strefa czasowa: <span class="spy-console-highlight">${hardware.timezone}</span>`,
+      `[STATUS] Lokalny czas: <span class="spy-console-highlight">${hardware.time}</span>`,
+      `----------------------------------------------`,
+      `[SZACOWANIE TROLLA (PRECYZYJNE DANE)]`,
+      `[-] Dystans do monitora: <span class="spy-console-highlight">~0.5 metra (zależy jak bardzo się garbisz)</span>`,
+      `[-] Tętno użytkownika: <span class="spy-console-highlight">lekko podwyższone 📈</span>`,
+      `[-] Najbliższy gołąb za oknem: <span class="spy-console-highlight">obserwuje Cię 🐦</span>`,
+      `[-] Chęć zamknięcia tej karty: <span class="spy-console-accent">100% (Zablokowano pop-upami)</span>`,
+      `[-] Status: <span class="spy-console-accent">ZPTOSZKOWANY POMYŚLNIE!</span>`
+    ]
+
+    let currentLine = 0
+    function printNextLine () {
+      if (currentLine < lines.length) {
+        const lineEl = document.createElement('div')
+        lineEl.className = 'spy-console-line'
+        lineEl.innerHTML = lines[currentLine]
+        contentEl.appendChild(lineEl)
+
+        consoleEl.scrollTop = consoleEl.scrollHeight
+
+        currentLine++
+        try {
+          playConsoleTick()
+        } catch (e) {}
+
+        setTimeout(printNextLine, 150)
+      } else {
+        const warningEl = document.createElement('div')
+        warningEl.innerHTML = `
+          <div class="spy-console-warning">
+            <strong>⚠️ EDUKACYJNE OSTRZEŻENIE:</strong><br>
+            Wszystkie powyższe dane zostały pobrane bezpośrednio przez przeglądarkę bez Twojej zgody (oprócz dokładnej lokalizacji GPS). Każda złośliwa strona w internecie może pobrać te informacje w ułamku sekundy po samym kliknięciu w link i użyć ich do śledzenia Cię (fingerprinting) lub uwiarygodnienia ataków socjotechnicznych. <strong>Bądź ostrożny i nie klikaj w podejrzane linki!</strong>
+          </div>
+        `
+        contentEl.appendChild(warningEl)
+
+        const closeBtn = document.createElement('button')
+        closeBtn.className = 'spy-console-close'
+        closeBtn.innerText = 'Rozumiem zagrożenie'
+        closeBtn.onclick = () => {
+          consoleEl.style.display = 'none'
+        }
+        contentEl.appendChild(closeBtn)
+        consoleEl.scrollTop = consoleEl.scrollHeight
+      }
+    }
+
+    printNextLine()
+  })
+}
+
+// pobieranie info o procesorze, ramie itp.
+function getHardwareSpecs () {
+  const canvas = document.createElement('canvas')
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+  let gpu = 'Nieznana (zablokowana lub brak WebGL)'
+  if (gl) {
+    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info')
+    if (debugInfo) {
+      gpu = gl.getParameter(debugInfo.UNMASKED_RENDERER_VENDOR_GL_RENDERER)
+    }
+  }
+
+  const batteryPromise = (navigator.getBattery)
+    ? navigator.getBattery().then(b => ({
+        level: Math.round(b.level * 100) + '%',
+        charging: b.charging ? 'tak (zasilacz)' : 'nie (bateria)'
+      })).catch(() => ({ level: 'Brak danych', charging: 'Brak danych' }))
+    : Promise.resolve({ level: 'Niewspierane', charging: 'Niewspierane' })
+
+  const ram = navigator.deviceMemory ? navigator.deviceMemory + ' GB' : 'Brak dostępu'
+  const cores = navigator.hardwareConcurrency ? navigator.hardwareConcurrency + ' rdzeni(e)' : 'Brak dostępu'
+  const hasTouch = ('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'tak' : 'nie'
+  const platform = navigator.platform || 'Nieznany'
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Ciemny (Dark Mode)' : 'Jasny (Light Mode)'
+
+  return batteryPromise.then(battery => ({
+    gpu,
+    ram,
+    cores,
+    battery,
+    hasTouch,
+    platform,
+    prefersDark,
+    screenSize: `${window.screen.width}x${window.screen.height} (${window.screen.colorDepth}-bit)`,
+    lang: navigator.language || 'Nieznany',
+    time: new Date().toLocaleTimeString(),
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+  }))
+}
+
+// strzał do api po lokalizacje i ip
+function fetchIPData () {
+  return fetch('https://ipapi.co/json/')
+    .then(res => {
+      if (!res.ok) throw new Error()
+      return res.json()
+    })
+    .then(data => ({
+      ip: data.ip || 'Nieznane',
+      city: data.city || 'Nieznane',
+      region: data.region || 'Nieznane',
+      country: data.country_name || 'Nieznane',
+      postal: data.postal || 'Nieznany',
+      isp: data.org || 'Nieznany'
+    }))
+    .catch(() => ({
+      ip: 'Zablokowane (AdBlock/VPN/Brak sieci)',
+      city: 'Nieznane',
+      region: 'Nieznane',
+      country: 'Nieznane',
+      postal: 'Nieznany',
+      isp: 'Nieznany'
+    }))
+}
+
+// zapytanie o uprawnienia GPS
+function requestExactLocation () {
+  return new Promise((resolve) => {
+    if (!navigator.geolocation) {
+      resolve(null)
+      return
+    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        resolve({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+          accuracy: Math.round(position.coords.accuracy)
+        })
+      },
+      () => {
+        resolve(null)
+      },
+      { timeout: 5000 }
+    )
+  })
+}
+
+// krótki dźwięk pikania przy wpisywaniu linii
+function playConsoleTick () {
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+  const osc = audioCtx.createOscillator()
+  const gain = audioCtx.createGain()
+
+  osc.connect(gain)
+  gain.connect(audioCtx.destination)
+
+  osc.type = 'sine'
+  osc.frequency.setValueAtTime(1000, audioCtx.currentTime)
+  gain.gain.setValueAtTime(0.015, audioCtx.currentTime)
+  gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.04)
+
+  osc.start()
+  osc.stop(audioCtx.currentTime + 0.05)
 }
