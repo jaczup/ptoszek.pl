@@ -22,6 +22,7 @@
     @MARECKIyt - https://github.com/MARECKIyt
     @Hyd3r1 - https://github.com/Hyd3r1
     @MariaWasNotAvailable - https://github.com/MariaWasNotAvailable
+    @szymsun - https://github.com/szymsun
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -153,6 +154,16 @@ const LOGOUT_SITES = {
   VK: ['GET', 'https://vk.com/exit'], // added by @MARECKIyt
   StackOverflow: ['GET', 'https://stackoverflow.com/users/logout'], // added by @MARECKIyt
   Asana: ['POST', 'https://app.asana.com/app/asana/-/logout'], // added by @Hyd3r1
+  USOSWEB_PW: ['GET', 'https://usosweb.usos.pw.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_UW: ['GET', 'https://usosweb.usos.uw.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_SGH: ['GET', 'https://usosweb.sgh.waw.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_WAT: ['GET', 'https://usos.wat.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_AGH: ['GET', 'https://web.usos.agh.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_UJ: ['GET', 'https://www.usosweb.uj.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_PWR: ['GET', 'https://web.usos.pwr.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_PRZ: ['GET', 'https://usos.prz.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_PUT: ['GET', 'https://usosweb.put.poznan.pl/kontroler.php?_action=logowaniecas/wyloguj'], // added by @szymsun
+  USOSWEB_UTH: ['GET', 'https://usosweb.uth.edu.pl/kontroler.php?_action=logowaniecas/wyloguj'] // added by @szymsun 
 }
 
 /**
